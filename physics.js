@@ -104,19 +104,20 @@ exports.selectlanguage = function(str){
     return "Galego seleccionado";
   }
   else {
+    lang = "eng";
     return "Language not recognized. English is automatically assigned";
   }
 }
 
 exports.lang_typeofproblem = function(){
   if (lang=="eng") {
-    return "What type of problem do you want to solve? (Motion / Force / Momentum / Kinetic Energy)";
+    return "What type of problem do you want to solve? (Motion / Force / Momentum / Kinetic Energy) ";
   }
   else if (lang=="esp") {
-    return "¿Qué tipo de problema quieres resolver? (Movimiento / Fuerza / Momento / Energía cinética)";
+    return "¿Qué tipo de problema quieres resolver? (Movimiento / Fuerza / Momento / Energía cinética) ";
   }
   else if (lang=="gal") {
-    return "Qué tipo de problema qués resolver? (Movemento / Forza / Momento / Enerxía cinética)";
+    return "Qué tipo de problema qués resolver? (Movemento / Forza / Momento / Enerxía cinética) ";
   }
 }
 
@@ -255,6 +256,67 @@ exports.lang_no = function(){
 exports.lang_n = function(){
   return "n";
 }
+
+exports.lang_speed = function(){
+    if (lang=="eng") {
+      return "speed";
+    }
+    else if (lang=="esp") {
+      return "velocidad";
+    }
+    else if (lang=="gal") {
+      return "velocidade";
+    }
+}
+
+exports.lang_velocity = function(){
+    if (lang=="eng") {
+      return "velocity";
+    }
+    else if (lang=="esp") {
+      return "velocidad";
+    }
+    else if (lang=="gal") {
+      return "velocidade";
+    }
+}
+
+exports.lang_whatisyourdistance = function(){
+    if (lang=="eng") {
+      return "What is your distance in meters? ";
+    }
+    else if (lang=="esp") {
+      return "Cuál es la distancia en metros? ";
+    }
+    else if (lang=="gal") {
+      return "Cal é a distancia en metros? ";
+    }
+}
+
+exports.lang_time = function(){
+    if (lang=="eng") {
+      return "time";
+    }
+    else if (lang=="esp") {
+      return "tiempo";
+    }
+    else if (lang=="gal") {
+      return "tempo";
+    }
+}
+
+exports.lang_acceleration = function(){
+    if (lang=="eng") {
+      return "acceleration";
+    }
+    else if (lang=="esp") {
+      return "aceleración";
+    }
+    else if (lang=="gal") {
+      return "aceleración";
+    }
+}
+
 
 
 //github 8ctorres

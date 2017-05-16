@@ -1,4 +1,4 @@
-# Junior Final
+# Sophomore/Junior Final
 ## The Fysics Phinal
 
 For this program you will be creating a terminal program that will ask the user a series of questions.  After the user has answered all of the questions, your program will select and evaluate the correct physics equations and return the answer to the user.

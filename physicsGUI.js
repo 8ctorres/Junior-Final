@@ -26,9 +26,9 @@ function getInput(){
               if (str.toLowerCase()==equations.lang_distance()) {
                 physics.question(equations.lang_whatisyourtime(), function(str){
                   let t = str;
-                    physics.question(exports.lang_whatisyourvelocity(), function(str){
+                    physics.question(equations.lang_whatisyourvelocity(), function(str){
                       let v = str;
-                        physics.question(exports.lang_isthereacceleration(), function(str){
+                        physics.question(equations.lang_isthereacceleration(), function(str){
                           if (str.toLowerCase()==equations.lang_no() || str.toLowerCase()==equations.lang_n()) {
                             let a = 0;
                             console.log(equations.motion_distance(t,v));
@@ -42,7 +42,7 @@ function getInput(){
                             });
                           }
                           else {
-                            console.log(exports.lang_notrecognized());
+                            console.log(equations.lang_notrecognized());
                             physics.close();
                             getInput();
                           }
@@ -50,26 +50,26 @@ function getInput(){
                       });
                 });
               }
-              else if (str.toLowerCase()=="speed" || str.toLowerCase()=="velocity") {
-                physics.question("What is your time in seconds? ", function(str){
+              else if (str.toLowerCase()==equations.lang_speed() || str.toLowerCase()==equations.lang_velocity()) {
+                physics.question(equations.lang_whatisyourtime(), function(str){
                   let t = str;
-                  physics.question("What is your distance in meters? ", function(str){
+                  physics.question(equations.lang_whatisyourdistance(), function(str){
                     let d = str;
-                    physics.question("Is there any acceleration? ", function(str){
-                      if (str.toLowerCase()=="n" || str.toLowerCase()=="no") {
+                    physics.question(equations.lang_isthereacceleration(), function(str){
+                      if (str.toLowerCase()==equations.lang_no() || str.toLowerCase()==equations.lang_n()) {
                         let a = 0;
                         console.log(equations.motion_velocity(t,d));
                         physics.close();
                       }
-                      else if (str.toLowerCase()=="y" || str.toLowerCase()=="yes") {
-                        physics.question("What is your acceleration in m/s2? ",function (str){
+                      else if (str.toLowerCase()==equations.lang_yes() || str.toLowerCase()==equations.lang_y()) {
+                        physics.question(equations.lang_whatisyouracceleration(),function (str){
                           let a = str;
                           console.log(equations.motion_velocity_wa(t,d,a));
                           physics.close();
                         }) ;
                       }
                       else {
-                        console.log("Not recognized. Please try again");
+                        console.log(equations.lang_notrecognized());
                         physics.close();
                         getInput();
                       }
@@ -77,26 +77,26 @@ function getInput(){
                   });
                 });
               }
-              else if (str.toLowerCase()=="time") {
-                physics.question("What is your distance in meters? ", function(str){
+              else if (str.toLowerCase()==equations.lang_time()) {
+                physics.question(equations.lang_whatisyourdistance(), function(str){
                   let d = str;
-                    physics.question("What is your velocity in m/s? ", function(str){
+                    physics.question(equations.lang_whatisyourvelocity(), function(str){
                       let v = str;
-                        physics.question("Is there any acceleration? ",function(str){
-                          if (str.toLowerCase()=="n" || str.toLowerCase()=="no") {
+                        physics.question(equations.lang_isthereacceleration(),function(str){
+                          if (str.toLowerCase()==equations.lang_no() || str.toLowerCase()==equations.lang_n()) {
                             let a = 0;
                             console.log(equations.motion_time(d,v));
                             physics.close();
                           }
-                          else if (str.toLowerCase()=="y" || str.toLowerCase()=="yes") {
-                            physics.question("What is your acceleration in m/s2? ",function(str){
+                          else if (str.toLowerCase()==equations.lang_yes() || str.toLowerCase()==equations.lang_y()) {
+                            physics.question(equations.lang_whatisyouracceleration(),function(str){
                               let a = str;
                               console.log(equations.motion_time_wa(d,v,a));
                               physics.close();
                             });
                           }
                           else {
-                            console.log("Not recognized. Please try again");
+                            console.log(equations.lang_notrecognized());
                             physics.close();
                             getInput();
                           }
@@ -104,12 +104,12 @@ function getInput(){
                 });
                 });
               }
-              else if (str.toLowerCase()=="acceleration") {
-                physics.question("What is your distance in meters? ", function(str){
+              else if (str.toLowerCase()==equations.lang_acceleration()) {
+                physics.question(equations.lang_whatisyourdistance(), function(str){
                   let d = str;
-                  physics.question("What is your velocity in m/s? ", function(str){
+                  physics.question(equations.lang_whatisyourvelocity(), function(str){
                     let v = str;
-                    physics.question("What is your time in seconds? ", function(str){
+                    physics.question(equations.lang_whatisyourtime(), function(str){
                       let t = str;
                       console.log(equations.motion_acceleration(d,v,t));
                       physics.close();
@@ -118,7 +118,7 @@ function getInput(){
                 });
               }
               else {
-                console.log("Type of value not recognized. Please try again")
+                console.log(equations.lang_notrecognized())
                 physics.close();
                 getInput();
               }
