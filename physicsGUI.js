@@ -125,32 +125,32 @@ function getInput(){
           });
           }
 
-          else if (str.toLowerCase()=="force") {
-            physics.question("What is your unknown value? ", function(str){
-              if (str.toLowerCase()=="force") {
-                physics.question("What is your mass in kilograms? ", function(str){
+          else if (str.toLowerCase()==equations.lang_force()) {
+            physics.question(equations.lang_unknownvalue(), function(str){
+              if (str.toLowerCase()==equations.force()) {
+                physics.question(equations.lang_whatisyourmass(), function(str){
                   let m = str;
-                  physics.question("What is your acceleration in meters/second square? ", function(str){
+                  physics.question(equations.lang_whatisyouracceleration(), function(str){
                     let a = str;
                     console.log(equations.force_force(m,a));
                     physics.close();
                   });
                 });
               }
-              else if (str.toLowerCase()=="mass") {
-                physics.question("What is your force in Newtons? ", function(str){
+              else if (str.toLowerCase()==equations.lang_mass()) {
+                physics.question(equations.lang_whatisyourforce(), function(str){
                   let f = str;
-                  physics.question("What is your acceleration in meters/second square? ", function(str){
+                  physics.question(equations.lang_whatisyouracceleration(), function(str){
                     let a = str;
                     console.log(equations.force_mass(f,a));
                     physics.close();
                   });
                 });
               }
-              else if (str.toLowerCase()=="acceleration") {
-                physics.question("What is your force in Newtons? ", function(str){
+              else if (str.toLowerCase()==equations.lang_acceleration()) {
+                physics.question(equations.lang_whatisyourforce(), function(str){
                   let f = str;
-                  physics.question("What is your mass in kilograms? ", function(str){
+                  physics.question(equations.whatisyourmass(), function(str){
                     let m = str;
                     console.log(equations.force_acceleration(f,m));
                     physics.close();
@@ -158,7 +158,7 @@ function getInput(){
                 });
               }
               else {
-                console.log("Value not recognized. Please try again");
+                console.log(equations.lang_notrecognized());
                 physics.close();
                 getInput();
               }
