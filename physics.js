@@ -317,6 +317,42 @@ exports.lang_acceleration = function(){
     }
 }
 
+exports.lang_force = function(){
+  if (lang=="eng") {
+      return "force";
+    }
+    else if (lang=="esp") {
+      return "fuerza";
+    }
+    else if (lang=="gal") {
+      return "forza";
+    }
+}
+
+exports.lang_mass = function(){
+  if (lang=="eng") {
+      return "mass";
+    }
+    else if (lang=="esp") {
+      return "masa";
+    }
+    else if (lang=="gal") {
+      return "masa";
+    }
+}
+
+exports.whatisyourforce = function(){
+  if (lang=="eng") {
+      return "What is your force in Newtons? ";
+    }
+    else if (lang=="esp") {
+      return "Cuál es la fuerza en Newtowns? ";
+    }
+    else if (lang=="gal") {
+      return "Cal é a forza en Newtowns? ";
+    }
+}
+
 
 
 //github 8ctorres
