@@ -1,4 +1,4 @@
-# Sophomore/Junior Final
+# Junior Final
 ## The Fysics Phinal
 
 For this program I will be creating a terminal program that will ask the user a series of questions.  After the user has answered all of the questions, yourthe program will select and evaluate the correct physics equations and return the answer to the user.
@@ -29,6 +29,7 @@ The program has a series of questions inside questions, inside questions to figu
 
 ###### Example
   -  "What type of equation would you like to choose?" (options: motion or energy)
+      +
     -  if motion
       +  which variable are you solving for? (options: d, v, t, or a)
     -  else if energy
