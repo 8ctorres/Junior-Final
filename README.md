@@ -29,11 +29,10 @@ The program has a series of questions inside questions, inside questions to figu
 
 ###### Example
   -  "What type of equation would you like to choose?" (options: motion or energy)
-      +
     -  if motion
-      +  which variable are you solving for? (options: d, v, t, or a)
+      +  What is your unknown variable? (options: d, v, t, or a)
     -  else if energy
-      +  which variable are you solving for? (options: ke, m, or v)
+      +  What is your unknown variable? (options: ke, m, or v)
     -  else
       +  I'm sorry I don't know how to calculate that yet...
       
