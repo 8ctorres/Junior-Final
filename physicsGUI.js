@@ -22,7 +22,7 @@ function getInput(){
 
         physics.question(equations.lang_typeofproblem(), function(str){
           if (str.toLowerCase()==equations.lang_motion()) {
-            physics.question(equations.lang_unknownvalue(), function(str){
+            physics.question(equations.lang_unknownvalue()+equations.lang_motionvalues(), function(str){
               if (str.toLowerCase()==equations.lang_distance()) {
                 physics.question(equations.lang_whatisyourtime(), function(str){
                   let t = str;
@@ -126,8 +126,8 @@ function getInput(){
           }
 
           else if (str.toLowerCase()==equations.lang_force()) {
-            physics.question(equations.lang_unknownvalue(), function(str){
-              if (str.toLowerCase()==equations.force()) {
+            physics.question(equations.lang_unknownvalue()+equations.lang_forcevalues(), function(str){
+              if (str.toLowerCase()==equations.lang_force()) {
                 physics.question(equations.lang_whatisyourmass(), function(str){
                   let m = str;
                   physics.question(equations.lang_whatisyouracceleration(), function(str){
@@ -150,7 +150,7 @@ function getInput(){
               else if (str.toLowerCase()==equations.lang_acceleration()) {
                 physics.question(equations.lang_whatisyourforce(), function(str){
                   let f = str;
-                  physics.question(equations.whatisyourmass(), function(str){
+                  physics.question(equations.lang_whatisyourmass(), function(str){
                     let m = str;
                     console.log(equations.force_acceleration(f,m));
                     physics.close();
@@ -164,14 +164,14 @@ function getInput(){
               }
             });
           }
-          else if (str.toLowerCase()=="momentum") {
-            physics.question("What is your unknown value? ", function(str){
-              if (str.toLowerCase()=="momentum") {
-                physics.question("What is your mass in kilograms? ", function(str){
+          else if (str.toLowerCase()==equations.lang_momentum()) {
+            physics.question(equations.lang_unknownvalue()+equations.lang_momentumvalues(), function(str){
+              if (str.toLowerCase()==equations.lang_momentum()) {
+                physics.question(equations.lang_whatisyourmass(), function(str){
                   let m = str;
-                  physics.question("What is your initial speed in m/s? ", function(str){
+                  physics.question(equations.lang_whatisyourinitialvelocity(), function(str){
                     let vi = str;
-                    physics.question("What is your final speed in m/s? ", function(str){
+                    physics.question(equations.lang_whatisyourfinalvelocity(), function(str){
                       let vf = str;
                       let v = vf-vi;
                       console.log(equations.momentum_momentum(m,v));
@@ -180,12 +180,12 @@ function getInput(){
                   });
                 });
               }
-              else if (str.toLowerCase()=="mass") {
-                physics.question("What is your momentum? ",function(str){
+              else if (str.toLowerCase()==equations.lang_mass()) {
+                physics.question(equations.lang_whatisyourmomentum(),function(str){
                   let p = str;
-                  physics.question("What is your initial speed in m/s? ", function(str){
+                  physics.question(equations.lang_whatisyourinitialvelocity(), function(str){
                     let vi = str;
-                    physics.question("What is your final speed in m/s? ", function(str){
+                    physics.question(equations.lang_whatisyourfinalvelocity(), function(str){
                       let vf = str;
                       let v = vf-vi;
                       console.log(equations.momentum_mass(p,v));
@@ -194,10 +194,10 @@ function getInput(){
                   });
                 });
               }
-              else if (str.toLowerCase()=="speed" || str.toLowerCase()=="velocity") {
-                physics.question("What is your momentum? ",function(str){
+              else if (str.toLowerCase()==equations.lang_speed() || str.toLowerCase()==equations.lang_velocity()) {
+                physics.question(equations.lang_whatisyourmomentum(),function(str){
                   let p = str;
-                  physics.question("What your mass in kilograms? ", function(str){
+                  physics.question(equations.lang_whatisyourmass(), function(str){
                     let m = str;
                     console.log(equations.momentum_velocity(p,m));
                     physics.close();
@@ -205,41 +205,41 @@ function getInput(){
                 });
               }
               else {
-                console.log("Value not recognized. Please try again");
+                console.log(equations.lang_notrecognized());
                 physics.close();
                 getInput();
               }
             });
           }
-          else if (str.toLowerCase()=="energy" || str.toLowerCase()=="kinetic energy") {
-            if (str.toLowerCase()=="energy"){
-              console.log("ATTENTION. This program ONLY calculates KINETIC ENERGY, not potential or any others")
+          else if (str.toLowerCase()==equations.lang_energy() || str.toLowerCase()==equations.lang_kineticenergy()) {
+            if (str.toLowerCase()==equations.lang_energy()){
+              console.log(equations.lang_problemonlycalculateskinetic())
             }
-            physics.question("What is your unknown value? ",function(str){
-              if (str.toLowerCase()=="energy" || str.toLowerCase()=="kinetic energy") {
-                physics.question("What is your mass in kilograms? ", function(str){
+            physics.question(equations.lang_unknownvalue()+equations.lang_energyvalues(),function(str){
+              if (str.toLowerCase()==equations.lang_energy() || str.toLowerCase()==equations.lang_kineticenergy()) {
+                physics.question(equations.lang_whatisyourmass(), function(str){
                   let m = str;
-                  physics.question("What is your velocity in m/s? ", function(str){
+                  physics.question(equations.lang_whatisyourvelocity(), function(str){
                     let v = str;
                     console.log(equations.energy_energy(m,v));
                     physics.close();
                   });
                 });
               }
-              else if (str.toLowerCase()=="mass") {
-                physics.question("What is your KINETIC energy in joules? ", function(str){
+              else if (str.toLowerCase()==equations.lang_mass()) {
+                physics.question(equations.lang_whatisyourkinetic(), function(str){
                   let ec = str;
-                  physics.question("What is your velocity in m/s? ", function(str){
+                  physics.question(equations.lang_whatisyourvelocity(), function(str){
                     let v = str;
                     console.log(equations.energy_mass(ec,v));
                     physics.close();
                   });
                 });
               }
-              else if (str.toLowerCase()=="speed" || str.toLowerCase()=="velocity") {
-                physics.question("What is your KINETIC energy in joules? ", function(str){
+              else if (str.toLowerCase()==equations.lang_speed() || str.toLowerCase()==equations.lang_velocity()) {
+                physics.question(equations.lang_whatisyourkinetic(), function(str){
                   let ec = str;
-                  physics.question("What is your mass in kilograms?", function(str){
+                  physics.question(equations.lang_whatisyourmass(), function(str){
                     let m = str;
                     console.log(equations.energy_velocity(ec,m));
                     physics.close();
@@ -247,21 +247,21 @@ function getInput(){
                 });
               }
               else {
-                console.log("Value not recognized. Please try again");
+                console.log(equations.lang_notrecognized());
                 physics.close();
                 getInput();
               }
             });
           }
           else {
-            console.log("Problem not recognized. Please try again")
+            console.log(equations.lang_notrecognized())
             physics.close();
             getInput();
           }
         });
 }
 
-let z = "Manuel, estás ahi??";
+let z = "Manolo!!!";
 if (z=="Qué che parese?") {
   console.log("Justouche, eh??");
 }

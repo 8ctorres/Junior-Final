@@ -30,13 +30,13 @@ exports.motion_time = function(d,v){
 }
 
 exports.motion_time_wa = function(d,v,a){
-  return "I actually don't know how to do that. Go ask your physics teacher.";
+  return exports.lang_dontknowhowto();
 }
 
 exports.motion_acceleration = function(d,v,t){
   let a = d - (v*t);
   a = a / (0.5*t*t);
-  return "Acceleration = "+a+" meters/second square";
+  return "Acceleration = "+a+" m/s2";
 }
 
 exports.force_force = function(m,a){
@@ -123,14 +123,62 @@ exports.lang_typeofproblem = function(){
 
 exports.lang_unknownvalue = function(){
   if (lang=="eng") {
-    return "What is your unknown value? (Distance / Time / Velocity / Acceleration) ";
+    return "What is your unknown value? ";
   }
   else if (lang=="esp") {
-    return "¿Cuál es tu valor desconocido? (Distancia / Tiempo / Velocidad / Aceleración) ";
+    return "¿Cuál es tu valor desconocido? ";
   }
   else if (lang=="gal") {
-    return "Cal é o valor que descoñeces? (Distancia / Tempo / Velocidade / Aceleración) ";
+    return "Cal é o valor que descoñeces? ";
   }
+}
+
+exports.lang_motionvalues = function(){
+  if (lang=="eng") {
+      return "(Distance / Velocity / Time / Acceleration) ";
+    }
+    else if (lang=="esp") {
+      return "(Distancia / Velocidad / Tiempo / Aceleración) ";
+    }
+    else if (lang=="gal") {
+      return "(Distancia / Velocidade / Tempo / Aceleración) ";
+    }
+}
+
+exports.lang_forcevalues = function(){
+  if (lang=="eng") {
+      return "(Force / Mass / Acceleration) ";
+    }
+    else if (lang=="esp") {
+      return "(Fuerza / Masa / Aceleración) ";
+    }
+    else if (lang=="gal") {
+      return "(Forza / Masa / Aceleración) ";
+    }
+}
+
+exports.lang_momentumvalues = function(){
+  if (lang=="eng") {
+      return "(Momentum / Mass / Velocity) ";
+    }
+    else if (lang=="esp") {
+      return "(Momento / Masa / Velocidad) ";
+    }
+    else if (lang=="gal") {
+      return "(Momento / Masa / Velocidade) ";
+    }
+}
+
+exports.lang_energyvalues = function(){
+  if (lang=="eng") {
+      return "(Energy / Mass / Velocity) ";
+    }
+    else if (lang=="esp") {
+      return "(Energía / Masa / Velocidad) ";
+    }
+    else if (lang=="gal") {
+      return "(Enerxía / Masa / Velocidade) ";
+    }
 }
 
 exports.lang_motion = function(){
@@ -310,10 +358,10 @@ exports.lang_acceleration = function(){
       return "acceleration";
     }
     else if (lang=="esp") {
-      return "aceleración";
+      return "aceleracion";
     }
     else if (lang=="gal") {
-      return "aceleración";
+      return "aceleracion";
     }
 }
 
@@ -341,7 +389,7 @@ exports.lang_mass = function(){
     }
 }
 
-exports.whatisyourforce = function(){
+exports.lang_whatisyourforce = function(){
   if (lang=="eng") {
       return "What is your force in Newtons? ";
     }
@@ -353,6 +401,124 @@ exports.whatisyourforce = function(){
     }
 }
 
+exports.lang_whatisyourmass = function(){
+  if (lang=="eng") {
+      return "What is your mass in kilograms? ";
+    }
+    else if (lang=="esp") {
+      return "Cuál es la masa en kilogramos? ";
+    }
+    else if (lang=="gal") {
+      return "Cal é a masa en kilogramos? ";
+    }
+}
 
+exports.lang_momentum = function(){
+  if (lang=="eng") {
+      return "momentum";
+    }
+    else if (lang=="esp") {
+      return "momento";
+    }
+    else if (lang=="gal") {
+      return "momento";
+    }
+}
+
+exports.lang_whatisyourinitialvelocity = function(){
+  if (lang=="eng") {
+      return "What is your initial speed in m/s? ";
+    }
+    else if (lang=="esp") {
+      return "Cuál es la velocidad inicial en m/s? ";
+    }
+    else if (lang=="gal") {
+      return "Cal é a velocidade inicial en m/s? ";
+    }
+}
+
+exports.lang_whatisyourfinalvelocity = function(){
+  if (lang=="eng") {
+      return "What is your final speed in m/s? ";
+    }
+    else if (lang=="esp") {
+      return "Cuál es la velocidad final en m/s? ";
+    }
+    else if (lang=="gal") {
+      return "Cal é a velocidade final en m/s? ";
+    }
+}
+
+exports.lang_whatisyourmomentum = function(){
+  if (lang=="eng") {
+      return "What is your momentum? ";
+    }
+    else if (lang=="esp") {
+      return "Cuál es el momento? ";
+    }
+    else if (lang=="gal") {
+      return "Cal é o momento? ";
+    }
+}
+
+exports.lang_energy = function(){
+  if (lang=="eng") {
+      return "energy";
+    }
+    else if (lang=="esp") {
+      return "energia";
+    }
+    else if (lang=="gal") {
+      return "Cal é o momento? ";
+    }
+}
+
+exports.lang_kineticenergy = function(){
+  if (lang=="eng") {
+      return "kinetic energy";
+    }
+    else if (lang=="esp") {
+      return "energia cinetica";
+    }
+    else if (lang=="gal") {
+      return "energia cinetica";
+    }
+}
+
+exports.lang_problemonlycalculateskinetic = function(){
+  if (lang=="eng") {
+      return "ATTENTION. This program ONLY calculates KINETIC ENERGY, not potential or any others";
+    }
+    else if (lang=="esp") {
+      return "ATENCIÓN. Este programa SOLAMENTE resuelve problemas de ENERGÍA CINÉTICA, no potencial o ningúna otra";
+    }
+    else if (lang=="gal") {
+      return "ATENCIÓN. Este programa SOAMENTE resolve problemas de ENERXÍA CINÉTICA, non potencial ou ningunha outra";
+    }
+}
+
+exports.lang_whatisyourkinetic = function(){
+  if (lang=="eng") {
+      return "What is your KINETIC energy in joules? ";
+    }
+    else if (lang=="esp") {
+      return "Cuál es la energía CINÉTICA en julios? ";
+    }
+    else if (lang=="gal") {
+      return "Cal é a enerxía CINÉTICA en joules? ";
+    }
+}
+
+exports.lang_dontknowhowto = function(){
+  if (lang=="eng") {
+      return "I actually don't know how to do that. Go ask your physics teacher.";
+    }
+    else if (lang=="esp") {
+      return "No sé como hacer eso. Pregúntale a tu profe de física";
+    }
+    else if (lang=="gal") {
+      return "Eu eso non o sei facer. Pregúntalle ao teu profe de física";
+    }
+}
 
 //github 8ctorres
