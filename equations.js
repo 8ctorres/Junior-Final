@@ -30,7 +30,15 @@ exports.motion_time = function(d,v){
 }
 
 exports.motion_time_wa = function(d,v,a){
-  return exports.lang_dontknowhowto();
+  let t1 = v*v + 2*a*d;
+  t1 = Math.sqrt(t1);
+  t1 = 0-v+t1;
+  t1 = t1/a;
+  let t2 = v*v + 2*a*d;
+  t2 = Math.sqrt(t2);
+  t2 = 0-v-t2;
+  t2 = t2/a;
+  return "Time = "+t1+" and "+t2+" seconds";
 }
 
 exports.motion_acceleration = function(d,v,t){
